@@ -26,6 +26,10 @@ jobs:
     - name: Yarn Setup
       uses: DerYeger/yarn-setup-action@v2.0.21
     - run: yarn build
+    - name: Upload GitHub Pages artifact
+      uses: actions/upload-pages-artifact@v3.0.1
+      with:
+        path: ./dist
     
   # Deployment job
   deploy:
@@ -35,48 +39,18 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
-    - name: GitHub Pages action
-      # You may pin to the exact commit or the version.
-      # uses: peaceiris/actions-gh-pages@4f9cc6602d3f66b9c108549d475ec49e8ef4d45e
-      uses: peaceiris/actions-gh-pages@v4.0.0
+    - name: Deploy GitHub Pages site
+      uses: actions/deploy-pages@v4.0.5
       with:
-        # Set a SSH private key from repository secret value for pushing to the remote branch.
-        deploy_key: # optional
-        # Set a generated GITHUB_TOKEN for pushing to the remote branch.
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        # Set a personal access token for pushing to the remote branch.
-        personal_token: # optional
-        # Set a target branch for deployment.
-        publish_branch: main # optional, default is gh-pages
-        # Set an input directory for deployment.
-        publish_dir: ./dist
-        # Set an destination subdirectory for deployment.
-        destination_dir: # optional, default is 
-        # Set an external repository (owner/repo).
-        external_repository: # optional
-        # If empty commits should be made to the publication branch
-        allow_empty_commit: # optional, default is false
-        # If existing files in the publish branch should be not removed before deploying
-        keep_files: # optional, default is false
-        # Keep only the latest commit on a GitHub Pages branch
-        force_orphan: # optional, default is false
-        # Set Git user.name
-        user_name: # optional
-        # Set Git user.email
-        user_email: # optional
-        # Set a custom commit message with a triggered commit hash
-        commit_message: # optional
-        # Set a custom full commit message without a triggered commit hash
-        full_commit_message: # optional
-        # Set tag name
-        tag_name: # optional
-        # Set tag message
-        tag_message: # optional
-        # Enable the GitHub Pages built-in Jekyll
-        enable_jekyll: # optional, default is false
-        # An alias for enable_jekyll to disable adding .nojekyll file to a publishing branch
-        disable_nojekyll: # optional, default is false
-        # Set custom domain
-        cname: # optional
-        # Set files or directories to exclude from a publish directory.
-        exclude_assets: # optional, default is .github
+        # GitHub token
+        token: # default is ${{ github.token }}
+        # Time in milliseconds after which to timeout and cancel the deployment (default: 10 minutes)
+        timeout: # optional, default is 600000
+        # Maximum number of status report errors before cancelling a deployment (default: 10)
+        error_count: # optional, default is 10
+        # Time in milliseconds between two deployment status report (default: 5 seconds)
+        reporting_interval: # optional, default is 5000
+        # Name of the artifact to deploy
+        artifact_name: # optional, default is github-pages
+        # Is this attempting to deploy a pull request as a GitHub Pages preview site? (NOTE: This feature is only in alpha currently and is not available to the public!)
+        preview: # optional, default is false
