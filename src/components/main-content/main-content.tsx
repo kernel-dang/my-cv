@@ -16,8 +16,8 @@ import { Circle } from '../circle/circle';
 
 export const MainContent = () => {
   return (
-    <div className="flex flex-row gap-10 p-4">
-      <div className="flex flex-col gap-4 bg-[#f5f7f85b]">
+    <div className="flex flex-row gap-10 p-4 mt-4">
+      <div className="flex flex-col gap-4 bg-[#f5f7f85b] p-8">
         <Section title="About me" iconUrl={informationIconUrl}>
           <div className="text-left">
             I graduated from the University of Information Technology with major
