@@ -43,7 +43,8 @@ jobs:
     needs: build
     steps:
     - name: Deploy GitHub Pages site
-      uses: actions/deploy-pages@v4.0.5
+      id: deployment
+      uses: actions/deploy-pages@v4.0.1
       with:
         # GitHub token
         token: # default is ${{ github.token }}
