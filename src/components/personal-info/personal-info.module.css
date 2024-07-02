@@ -1,0 +1,13 @@
+.statusContainer {
+  position: relative;
+  top: 60px;
+  background-color: #16a084a4;
+  color: whitesmoke;
+  padding: 8px;
+  border-radius: 4px;
+  width: 550px;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+}
