@@ -1,5 +1,6 @@
 import birthdayCakeIcon from '../../assets/birthday-cake.svg';
-import { statusContainer } from './personal-info.module.css';
+import styles from './personal-info.module.css';
+const { statusContainer } = styles;
 import openLabelIconUrl from '../../assets/open-sign.png';
 
 export const PersonalInfo = () => {

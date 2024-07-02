@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'preact/hooks';
-import { progressBar } from './progress-bar.module.css';
+import styles from './progress-bar.module.css';
+const { progressBar } = styles;
 
 interface ProgressBarProps {
   /**

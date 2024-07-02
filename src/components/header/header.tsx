@@ -2,7 +2,8 @@ import classNames from 'classnames';
 import { Avatar } from '../avatar/avatar';
 import { Contact } from '../contact/contact';
 import { PersonalInfo } from '../personal-info/personal-info';
-import { container } from './header.module.css';
+import styles from './header.module.css';
+const { container } = styles;
 
 export const Header = () => {
   return (
