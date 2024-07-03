@@ -39,12 +39,13 @@ export const Layout = ({ header, content, bottom }: LayoutProps) => {
       });
   };
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center w-fit">
       <div
         className="flex-col bg-white relative"
         id="element-to-print"
         style={{
           width: '210mm',
+          minWidth: '210mm'
         }}
       >
         <div className="relative z-10">{header}</div>
