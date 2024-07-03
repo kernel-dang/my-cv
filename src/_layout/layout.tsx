@@ -1,7 +1,7 @@
 import { ReactNode } from 'preact/compat';
 import { Particles } from '../components/particles/particles';
-import html2pdf from 'html2pdf.js';
-
+import { toPixelData } from 'html-to-image';
+import { jsPDF } from 'jspdf';
 interface LayoutProps {
   header?: ReactNode;
   content?: ReactNode;
@@ -9,6 +9,35 @@ interface LayoutProps {
 }
 
 export const Layout = ({ header, content, bottom }: LayoutProps) => {
+  const printToPdf = () => {
+    var element = document.getElementById('element-to-print') as HTMLDivElement;
+
+    toPixelData(element as any)
+      .then(function (data) {
+        const imageData = new ImageData(
+          data,
+          element.offsetWidth,
+          element.offsetHeight
+        );
+
+        const pdfDoc = createPdfDocument();
+        const { width: pdfPageWidth, height: pdfPageHeight } =
+          pdfDoc.internal.pageSize;
+
+        pdfDoc.addImage({
+          imageData: imageData,
+          x: 100,
+          y: 100,
+          width: pdfPageWidth,
+          height: pdfPageHeight,
+        });
+
+        pdfDoc.save('DangThanhNhan_CV.pdf');
+      })
+      .catch(function (error) {
+        console.error('oops, something went wrong!', error);
+      });
+  };
   return (
     <div className="flex justify-center">
       <div
@@ -24,19 +53,6 @@ export const Layout = ({ header, content, bottom }: LayoutProps) => {
         <Particles className="absolute left-0 top-0 w-full h-full" />
       </div>
       <button
-        onClick={() => {
-          var element = document.getElementById('element-to-print');
-          var opt = {
-            margin: 0,
-            filename: 'myfile.pdf',
-            image: { type: 'jpeg', quality: 1 },
-            html2canvas: { scale: 1 },
-            jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' },
-          };
-
-          // New Promise-based usage:
-          html2pdf().set(opt).from(element).save();
-        }}
         type="button"
         class="fixed bottom-2 right-2 z-10 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
       >
@@ -44,4 +60,14 @@ export const Layout = ({ header, content, bottom }: LayoutProps) => {
       </button>
     </div>
   );
+};
+
+const createPdfDocument = () => {
+  // Default export is a4 paper, portrait, using millimeters for units
+  const doc = new jsPDF({
+    format: 'a4',
+    unit: 'mm',
+  });
+
+  return doc;
 };

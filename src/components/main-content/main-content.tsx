@@ -177,7 +177,6 @@ export const MainContent = () => {
             ></Circle>
           </div>
         </Section>
-        <div className="html2pdf__page-break hidden"></div>
         <Section title="Foreign Languages" iconUrl={languageIconUrl}>
           <div className="text-left">
             <div className="font-medium">English</div>
