@@ -7,7 +7,8 @@ export const PersonalInfo = () => {
   return (
     <div className="flex-1 flex flex-col items-center">
       <div className="text-5xl font-medium mt-10">DANG THANH NHAN</div>
-      <div className="flex justify-center items-center gap-2">
+      <div className="font-medium flex justify-center items-center gap-2">
+        <div>KernelD</div>
         <img
           src={birthdayCakeIcon}
           alt="Birthday cake"

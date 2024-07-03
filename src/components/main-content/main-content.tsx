@@ -16,7 +16,7 @@ import { Circle } from '../circle/circle';
 
 export const MainContent = () => {
   return (
-    <div className="flex flex-row gap-10 p-4 mt-4">
+    <div className="flex flex-row mt-10">
       <div className="flex flex-col gap-4 bg-[#f5f7f85b] p-8">
         <Section title="About me" iconUrl={informationIconUrl}>
           <div className="text-left">
@@ -78,7 +78,7 @@ export const MainContent = () => {
           </div>
         </Section>
       </div>
-      <div className="min-w-80 flex flex-col gap-4">
+      <div className="min-w-96 flex flex-col gap-4 p-8">
         <Section title="Skills" iconUrl={gearIconUrl}>
           <div>- Programming -</div>
           <div className="relative" style={{ height: 250 }}>
