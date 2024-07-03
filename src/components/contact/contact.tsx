@@ -1,15 +1,15 @@
-import homeIcon from '../../assets/home.svg';
-import phoneIcon from '../../assets/phone.svg';
-import emailIcon from '../../assets/email.svg';
-import facebookIcon from '../../assets/facebook.svg';
-import linkedinIcon from '../../assets/linkedin.svg';
+import homeIcon from '../../assets/home.png';
+import phoneIcon from '../../assets/phone.png';
+import emailIcon from '../../assets/email.png';
+import facebookIcon from '../../assets/facebook.png';
+import linkedinIcon from '../../assets/linkedin.png';
 
 export const Contact = () => {
   return (
-    <div className="p-6 flex flex-col gap-2">
+    <div className="flex flex-col gap-2 text-left">
       <div className="flex gap-4">
         <img src={homeIcon} alt="Home icon" className="size-6" />
-        <div>17, 588 street, 9 district, Ho Chi Minh city</div>
+        <div>17, 588 street, 9 district, HCM city</div>
       </div>
       <div className="flex gap-4">
         <img src={phoneIcon} alt="Phone icon" className="size-6"></img>

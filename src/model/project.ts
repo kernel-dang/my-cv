@@ -4,4 +4,5 @@ export interface Project {
   teamSize?: number;
   role?: string;
   technology?: string;
+  breakToNewPage?: boolean;
 }

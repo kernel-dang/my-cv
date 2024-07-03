@@ -10,8 +10,8 @@
   },
   "dependencies": {
     "classnames": "^2.5.1",
+    "html2pdf.js": "^0.10.2",
     "lodash": "^4.17.21",
-    "particles.js": "^2.0.0",
     "preact": "^10.22.0"
   },
   "devDependencies": {
