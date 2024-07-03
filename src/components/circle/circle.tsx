@@ -1,12 +1,8 @@
 import classNames from 'classnames';
-import { each } from 'lodash';
 import {
   HTMLProps,
   ReactNode,
-  useEffect,
-  useMemo,
   useRef,
-  useState,
 } from 'preact/compat';
 import { Transition } from 'react-transition-group';
 

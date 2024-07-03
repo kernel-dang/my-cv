@@ -1,6 +1,5 @@
-import { useEffect, useMemo, useRef, useState } from 'preact/hooks';
+import { useEffect, useRef, useState } from 'preact/hooks';
 import styles from './progress-bar.module.css';
-import { each } from 'lodash';
 import { Transition } from 'react-transition-group';
 const { progressBar } = styles;
 
