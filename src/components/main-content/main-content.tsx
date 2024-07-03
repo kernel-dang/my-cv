@@ -1,4 +1,4 @@
-import { map } from 'lodash';
+import { each, map } from 'lodash';
 import { Section } from '../section/section';
 import { ExperienceCard } from '../experience-card/experience-card';
 import { experiences } from '../experience-card/experiences';
@@ -15,8 +15,61 @@ import { Card } from '../card/card';
 import { ProgressBar } from '../progress-bar/progress-bar';
 import { Circle } from '../circle/circle';
 import { Contact } from '../contact/contact';
+import { useEffect, useMemo, useRef, useState } from 'preact/hooks';
 
 export const MainContent = () => {
+  const [inPropForProgressBars, setInPropForProgressBars] = useState(false);
+  const [inPropForTechnologyCircles, setInPropForTechnologyCircles] =
+    useState(false);
+  const [inPropForProgrammingCircles, setInPropForProgrammingCircles] =
+    useState(false);
+  const technologyCirclesRef = useRef<HTMLDivElement>(null);
+  const programmingCirclesRef = useRef<HTMLDivElement>(null);
+  const progressBarsRef = useRef<HTMLDivElement>(null);
+  const intersectionObserver = useMemo(
+    () =>
+      new IntersectionObserver(
+        (entries) => {
+          each(entries, (entry) => {
+            if (entry.isIntersecting) {
+              if (entry.target === progressBarsRef.current) {
+                setInPropForProgressBars(true);
+              }
+              if (entry.target === technologyCirclesRef.current) {
+                setInPropForTechnologyCircles(true);
+              }
+              if (entry.target === programmingCirclesRef.current) {
+                setInPropForProgrammingCircles(true);
+              }
+            }
+          });
+        },
+        {
+          root: null,
+          threshold: 0.1,
+        }
+      ),
+    []
+  );
+
+  useEffect(() => {
+    if (progressBarsRef.current) {
+      intersectionObserver.observe(progressBarsRef.current);
+    }
+  }, [progressBarsRef.current]);
+
+  useEffect(() => {
+    if (programmingCirclesRef.current) {
+      intersectionObserver.observe(programmingCirclesRef.current);
+    }
+  }, [programmingCirclesRef.current]);
+
+  useEffect(() => {
+    if (technologyCirclesRef.current) {
+      intersectionObserver.observe(technologyCirclesRef.current);
+    }
+  }, [technologyCirclesRef.current]);
+
   return (
     <div className="flex flex-row mt-5">
       {/* left side */}
@@ -88,45 +141,59 @@ export const MainContent = () => {
         </Section>
         <Section title="Skills" iconUrl={gearIconUrl}>
           <div className="text-center">- Programming -</div>
-          <div className="relative" style={{ height: 210 }}>
+          <div
+            className="relative"
+            style={{ height: 210 }}
+            ref={programmingCirclesRef}
+          >
             <Circle
               radius={60}
               title="C#/C++"
               className="absolute"
               style={{ top: 30, left: 50 }}
+              inProp={inPropForProgrammingCircles}
             ></Circle>
             <Circle
               radius={35}
               title="Python"
               className="absolute"
               style={{ top: 20, left: 10 }}
+              inProp={inPropForProgrammingCircles}
             ></Circle>
             <Circle
               radius={50}
               title="JS/TS"
               className="absolute"
               style={{ top: 10, left: 130 }}
+              inProp={inPropForProgrammingCircles}
             ></Circle>
             <Circle
               radius={40}
               title="HTML/CSS"
               className="absolute"
               style={{ top: 100, left: 30 }}
+              inProp={inPropForProgrammingCircles}
             ></Circle>
             <Circle
               radius={35}
               title="SQL"
               className="absolute"
               style={{ top: 120, left: 110 }}
+              inProp={inPropForProgrammingCircles}
             ></Circle>
           </div>
           <div className="text-center">- Technology & Architecture -</div>
-          <div className="relative" style={{ height: 230 }}>
+          <div
+            className="relative"
+            style={{ height: 230 }}
+            ref={technologyCirclesRef}
+          >
             <Circle
               radius={60}
               title=".NET"
               className="absolute"
               style={{ top: 30, left: 70 }}
+              inProp={inPropForTechnologyCircles}
             ></Circle>
             <Circle
               radius={50}
@@ -142,6 +209,7 @@ export const MainContent = () => {
               }
               className="absolute"
               style={{ top: 10, left: 10 }}
+              inProp={inPropForTechnologyCircles}
             ></Circle>
             <Circle
               radius={40}
@@ -156,39 +224,58 @@ export const MainContent = () => {
               }
               className="absolute"
               style={{ top: 10, left: 140 }}
+              inProp={inPropForTechnologyCircles}
             ></Circle>
             <Circle
               radius={30}
               title="SOLID"
               className="absolute"
               style={{ top: 100, left: 40 }}
+              inProp={inPropForTechnologyCircles}
             ></Circle>
             <Circle
               radius={40}
               title="Django"
               className="absolute"
               style={{ top: 140, left: 70 }}
+              inProp={inPropForTechnologyCircles}
             ></Circle>
             <Circle
               radius={50}
               title="React/Preact"
               className="absolute"
               style={{ top: 80, left: 130 }}
+              inProp={inPropForTechnologyCircles}
             ></Circle>
           </div>
         </Section>
         <Section title="Foreign Languages" iconUrl={languageIconUrl}>
           <div className="text-left">
             <div className="font-medium">English</div>
-            <div className="grid grid-cols-[auto_1fr] gap-1">
+            <div
+              className="grid grid-cols-[auto_1fr] gap-1"
+              ref={progressBarsRef}
+            >
               <div>Reading</div>
-              <ProgressBar percent={80}></ProgressBar>
+              <ProgressBar
+                percent={80}
+                inProp={inPropForProgressBars}
+              ></ProgressBar>
               <div>Writing</div>
-              <ProgressBar percent={70}></ProgressBar>
+              <ProgressBar
+                percent={70}
+                inProp={inPropForProgressBars}
+              ></ProgressBar>
               <div>Listening</div>
-              <ProgressBar percent={60}></ProgressBar>
+              <ProgressBar
+                percent={60}
+                inProp={inPropForProgressBars}
+              ></ProgressBar>
               <div>Speaking</div>
-              <ProgressBar percent={50}></ProgressBar>
+              <ProgressBar
+                percent={50}
+                inProp={inPropForProgressBars}
+              ></ProgressBar>
             </div>
           </div>
         </Section>

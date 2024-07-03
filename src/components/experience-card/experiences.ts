@@ -9,7 +9,7 @@ export const experiences: Experience[] = [
         name: 'Wellbarrier',
         description: `Wellbarrier is a project to manage state of well and well integrity. We build a product to help the engineers in field of oid and gas can draw the illustrations of well structure, manage well cycle from start to the end with effortless. Managers can monitor the health of well by the products: Risk Management, Well Barrier, Verification and Monitoring`,
         teamSize: 43,
-        role: 'Fullstack Developer/Technical Advisor',
+        role: 'Technical Advisor, Fullstack Developer',
         technology:
           'ASP.NET Restful API, Azure, Dapper, SQL Servier, Preact, D3.js, Snabdom, Vanilla JS',
       },
