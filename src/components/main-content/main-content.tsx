@@ -150,35 +150,35 @@ export const MainContent = () => {
               radius={60}
               title="C#/C++"
               className="absolute"
-              style={{ top: 30, left: 50 }}
+              style={{ top: 30, left: 40 }}
               inProp={inPropForProgrammingCircles}
             ></Circle>
             <Circle
               radius={35}
               title="Python"
               className="absolute"
-              style={{ top: 20, left: 10 }}
+              style={{ top: 20, left: 0 }}
               inProp={inPropForProgrammingCircles}
             ></Circle>
             <Circle
               radius={50}
               title="JS/TS"
               className="absolute"
-              style={{ top: 10, left: 130 }}
+              style={{ top: 10, left: 120 }}
               inProp={inPropForProgrammingCircles}
             ></Circle>
             <Circle
               radius={40}
               title="HTML/CSS"
               className="absolute"
-              style={{ top: 100, left: 30 }}
+              style={{ top: 100, left: 20 }}
               inProp={inPropForProgrammingCircles}
             ></Circle>
             <Circle
               radius={35}
               title="SQL"
               className="absolute"
-              style={{ top: 120, left: 110 }}
+              style={{ top: 120, left: 100 }}
               inProp={inPropForProgrammingCircles}
             ></Circle>
           </div>
@@ -192,7 +192,7 @@ export const MainContent = () => {
               radius={60}
               title=".NET"
               className="absolute"
-              style={{ top: 30, left: 70 }}
+              style={{ top: 30, left: 60 }}
               inProp={inPropForTechnologyCircles}
             ></Circle>
             <Circle
@@ -208,7 +208,7 @@ export const MainContent = () => {
                 ) as any
               }
               className="absolute"
-              style={{ top: 10, left: 10 }}
+              style={{ top: 10, left: 0 }}
               inProp={inPropForTechnologyCircles}
             ></Circle>
             <Circle
@@ -223,28 +223,28 @@ export const MainContent = () => {
                 ) as any
               }
               className="absolute"
-              style={{ top: 10, left: 140 }}
+              style={{ top: 10, left: 130 }}
               inProp={inPropForTechnologyCircles}
             ></Circle>
             <Circle
               radius={30}
               title="SOLID"
               className="absolute"
-              style={{ top: 100, left: 40 }}
+              style={{ top: 100, left: 30 }}
               inProp={inPropForTechnologyCircles}
             ></Circle>
             <Circle
               radius={40}
               title="Django"
               className="absolute"
-              style={{ top: 140, left: 70 }}
+              style={{ top: 140, left: 60 }}
               inProp={inPropForTechnologyCircles}
             ></Circle>
             <Circle
               radius={50}
               title="React/Preact"
               className="absolute"
-              style={{ top: 80, left: 130 }}
+              style={{ top: 80, left: 120 }}
               inProp={inPropForTechnologyCircles}
             ></Circle>
           </div>
@@ -280,8 +280,8 @@ export const MainContent = () => {
           </div>
         </Section>
         <Section title="Other Certificates" iconUrl={certificateIconUrl}>
-          <div className="flex flex-row gap-2 items-center">
-            <img src={ibmBlockchainIconUrl} class="size-20"></img>
+          <div className="flex flex-row gap-2 items-center text-left">
+            <img src={ibmBlockchainIconUrl} class="size-14"></img>
             <span className="font-medium">IBM Blockchain Essential</span>
           </div>
         </Section>
