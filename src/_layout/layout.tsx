@@ -1,9 +1,9 @@
 import { ReactNode, useState } from 'preact/compat';
 import { Particles } from '../components/particles/particles';
-import { toCanvas, toPixelData, toPng } from 'html-to-image';
+import { toCanvas } from 'html-to-image';
 import { jsPDF } from 'jspdf';
-import { ceil, floor, slice } from 'lodash';
-import html2canvas from 'html2canvas';
+import { ceil, floor } from 'lodash';
+
 interface LayoutProps {
   header?: ReactNode;
   content?: ReactNode;
@@ -26,7 +26,9 @@ export const Layout = ({ header, content, bottom }: LayoutProps) => {
         {bottom}
         <Particles className="absolute left-0 top-0 w-full h-full" />
       </div>
-      <DownloadButton></DownloadButton>
+      <div className="flex flex-row fixed bottom-2 right-2 z-10">
+        <DownloadButton></DownloadButton>
+      </div>
     </div>
   );
 };
@@ -37,6 +39,8 @@ const createPdfDocument = () => {
     format: 'a4',
     unit: 'mm',
   });
+
+  doc.setDisplayMode(1);
 
   return doc;
 };
@@ -78,11 +82,11 @@ const DownloadButton = () => {
               imageSectionHeight = imageHeight - previousImageHeight; // remain content
             } else if (index === 0) {
               imageSectionHeight = floor(
-                (pdfPageHeight - pageMarginBottom) * ratio
+                (pdfPageHeight - pageMarginBottom - 10) * ratio
               );
             } else if (index === 1) {
               imageSectionHeight = floor(
-                (pdfPageHeight - pageMarginBottom - pageMarginTop - 1) * ratio
+                (pdfPageHeight - pageMarginBottom - pageMarginTop - 15) * ratio
               );
             } else {
               imageSectionHeight = floor(
@@ -152,6 +156,12 @@ const DownloadButton = () => {
             url: 'https://www.linkedin.com/in/kernel-dang',
           });
 
+          pdfDoc.setPage(2);
+          // pdfDoc.rect(189, 144, 13, 3);
+          pdfDoc.link(189, 144, 13, 3, {
+            url: 'https://www.linkedin.com/in/kernel-dang',
+          });
+
           pdfDoc.save('DangThanhNhan_CV.pdf');
         } catch (error) {
           console.error('oops, something went wrong!', error);
@@ -159,7 +169,7 @@ const DownloadButton = () => {
           setDownloading(false);
         }
       }}
-      class="cursor-pointer fixed bottom-2 right-2 z-10 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 flex flex-row gap-2 items-center"
+      class="cursor-pointer text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 flex flex-row gap-2 items-center"
     >
       {!downloading && (
         <svg

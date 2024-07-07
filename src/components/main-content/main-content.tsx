@@ -308,7 +308,7 @@ export const MainContent = () => {
               <a
                 href="https://www.linkedin.com/in/kernel-dang/#recommendations"
                 target="_blank"
-                className="underline hover:text-blue-600"
+                className="text-blue-600 hover:underline"
               >
                 See more
               </a>

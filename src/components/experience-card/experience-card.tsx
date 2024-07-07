@@ -24,18 +24,20 @@ export const ExperienceCard = ({
                   <span>{name}</span>
                 </div>
                 <div>
-                  <span>Description:&nbsp;</span>
+                  <span className="font-medium">Description:&nbsp;</span>
                   <span>{description}</span>
                 </div>
                 {teamSize && (
                   <div>
-                    <span>Team Size:&nbsp;</span>
+                    <span className="font-medium">Team Size:&nbsp;</span>
                     <span>{teamSize}</span>
                   </div>
                 )}
                 {role && (
                   <div>
-                    <span>Role/Responsibilities:&nbsp;</span>
+                    <span className="font-medium">
+                      Role/Responsibilities:&nbsp;
+                    </span>
                     <span>{role}</span>
                   </div>
                 )}
