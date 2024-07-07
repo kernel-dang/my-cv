@@ -1,4 +1,4 @@
-import { Experience } from "../../model/experience";
+import { Experience } from '../../model/experience';
 
 export const experiences: Experience[] = [
   {
@@ -7,11 +7,12 @@ export const experiences: Experience[] = [
     projects: [
       {
         name: 'Wellbarrier',
-        description: `Wellbarrier is a project to manage state of well and well integrity. We build a product to help the engineers in field of oid and gas can draw the illustrations of well structure, manage well cycle from start to the end with effortless. Managers can monitor the health of well by the products: Risk Management, Well Barrier, Verification and Monitoring`,
+        description:
+          'Wellbarrier is a comprehensive well integrity management solution that spans the entire well life cycle. It ensures a clear and common understanding of risk among all stakeholders. Wellbarrier empowers engineers in the oil and gas field by enabling them to visualize, communicate, and document well structures efficiently. Managers can monitor well health using products like Risk Management, Well Barrier, Verification, and Monitoring',
         teamSize: 43,
-        role: 'Technical Advisor, Fullstack Developer',
+        role: 'As a Technical Advisor, I work closely with customers to break down requirements, ensure that the product aligns with reality, provide estimations, write documents, train new team members, and offer advice to overcome obstacles. As a Fullstack Developer, I adhere to SOLID principles when writing code and frequently tackle challenging problems.',
         technology:
-          'ASP.NET Restful API, Azure, Dapper, SQL Servier, Preact, D3.js, Snabdom, Vanilla JS',
+          'ASP.NET Restful API, Azure, Dapper, SQL Server, React/Preact, D3.js, Snabdom, Vanilla JS',
       },
     ],
   },

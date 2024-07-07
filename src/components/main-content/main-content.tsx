@@ -7,6 +7,7 @@ import informationIconUrl from '../../assets/information.png';
 import badgeIconUrl from '../../assets/badge.png';
 import graduateCapIconUrl from '../../assets/graduation-cap.png';
 import certificateIconUrl from '../../assets/certificate.png';
+import recommendationIconUrl from '../../assets/star.png';
 import languageIconUrl from '../../assets/language.png';
 import gearIconUrl from '../../assets/gear.png';
 import ibmBlockchainIconUrl from '../../assets/ibm_blockchain.png';
@@ -135,7 +136,7 @@ export const MainContent = () => {
         </Section>
       </div>
       {/* right side */}
-      <div className="flex flex-col gap-4 p-4 min-w-[250px]">
+      <div className="flex flex-col gap-4 p-4 min-w-[250px] w-[250px]">
         <Section title="Contact" iconUrl={contactIconUrl}>
           <Contact></Contact>
         </Section>
@@ -276,6 +277,41 @@ export const MainContent = () => {
                 percent={50}
                 inProp={inPropForProgressBars}
               ></ProgressBar>
+            </div>
+          </div>
+        </Section>
+        <Section title="Recommendation" iconUrl={recommendationIconUrl}>
+          <div className="text-left">
+            <div className="flex flex-row gap-2 items-center">
+              <img
+                src="https://media.licdn.com/dms/image/D5603AQEtE0TYuGN7PA/profile-displayphoto-shrink_100_100/0/1713108856995?e=1726099200&amp;v=beta&amp;t=WpYcZ4N1t7nrvNXIjJdWWt2L1jz7dt_KFTNGnMGuacE"
+                loading="lazy"
+                alt="Nguyen Hoang profile picture"
+                className="rounded-full size-14"
+              ></img>
+              <div className="flex flex-col items-start">
+                <span className="font-medium">Nguyen Hoang</span>
+                <span className="text-sm text-[#000000e6]">
+                  Development Manager at Restaff/House Of Norway
+                </span>
+              </div>
+            </div>
+            <div className={'mt-2 text-sm'}>
+              Nhan’s dedication to his work is commendable. He consistently goes
+              above and beyond to deliver high-quality results. As a mentor,
+              Nhan invests time in guiding new team members, helping them grow
+              both technically and professionally.<br></br> His combination of
+              technical expertise, collaborative mindset, and unwavering
+              dedication makes him an invaluable team member. I wholeheartedly
+              recommend Nhan for any role that requires harmony among technical
+              skill, analytical thinking, teamwork, and commitment. &nbsp;
+              <a
+                href="https://www.linkedin.com/in/kernel-dang/#recommendations"
+                target="_blank"
+                className="underline hover:text-blue-600"
+              >
+                See more
+              </a>
             </div>
           </div>
         </Section>

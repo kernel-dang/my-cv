@@ -31,7 +31,7 @@ export const PersonalInfo = () => {
   }, []);
   return (
     <div className="flex-1 flex flex-col items-center">
-      <div className="text-5xl font-medium mt-10 text-nowrap">
+      <div className="text-5xl font-medium mt-14 text-nowrap">
         DANG THANH NHAN
       </div>
       <div className="font-medium flex justify-center items-center gap-2 mt-2">

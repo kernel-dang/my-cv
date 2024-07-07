@@ -1,3 +1,14 @@
 .container {
-    background-color: #F5F7F8;
+  background-color: #f5f7f8;
+}
+
+.cvOnline::before {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  border-left: 6px solid transparent;
+  border-top: 6px solid #16a084a4;
+  top: 25px;
+  left: 0;
+  right: 0;
 }

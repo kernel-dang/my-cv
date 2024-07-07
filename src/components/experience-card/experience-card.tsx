@@ -35,7 +35,7 @@ export const ExperienceCard = ({
                 )}
                 {role && (
                   <div>
-                    <span>Role:&nbsp;</span>
+                    <span>Role/Responsibilities:&nbsp;</span>
                     <span>{role}</span>
                   </div>
                 )}

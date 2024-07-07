@@ -1,6 +1,6 @@
 .statusContainer {
-  position: relative;
-  top: 32px;
+  position: absolute;
+  bottom: 0;
   background-color: #16a084a4;
   color: whitesmoke;
   padding: 8px 32px;

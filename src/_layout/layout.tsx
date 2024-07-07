@@ -131,6 +131,12 @@ const DownloadButton = () => {
           // add links to pdf
           pdfDoc.setPage(1);
           pdfDoc.setFillColor(0, 0, 0);
+
+          // pdfDoc.rect(145, 0, 65, 8);
+          pdfDoc.link(145, 0, 65, 8, {
+            url: 'https://kernel-dang.github.io/my-cv/',
+          });
+
           // pdfDoc.rect(155, 92, 50, 6);
           pdfDoc.link(155, 92, 50, 6, {
             url: 'mailto:kerneldang@gmail.com',
@@ -153,7 +159,7 @@ const DownloadButton = () => {
           setDownloading(false);
         }
       }}
-      class="fixed bottom-2 right-2 z-10 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 flex flex-row gap-2 items-center"
+      class="cursor-pointer fixed bottom-2 right-2 z-10 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 flex flex-row gap-2 items-center"
     >
       {!downloading && (
         <svg
