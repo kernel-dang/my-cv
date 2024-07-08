@@ -43,7 +43,7 @@ export const ExperienceCard = ({
                 )}
                 {technology && (
                   <div>
-                    <span>Technology:&nbsp;</span>
+                    <span className="font-medium">Technology:&nbsp;</span>
                     <span>{technology}</span>
                   </div>
                 )}
