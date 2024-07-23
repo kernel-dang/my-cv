@@ -12,7 +12,7 @@ export const experiences: Experience[] = [
         teamSize: 43,
         role: 'As a Technical Advisor, I work closely with customers to break down requirements, ensure that the product aligns with reality, provide estimations, write documents, train new team members, and offer advice to overcome obstacles. As a Fullstack Developer, I adhere to SOLID principles when writing code and frequently tackle challenging problems.',
         technology:
-          'ASP.NET Restful API, Azure, Dapper, SQL Server, React/Preact, D3.js, Snabdom, Vanilla JS',
+          'ASP.NET Restful API, Azure, Dapper, SQL Server, React/Preact, D3.js, Snabdom, NodeJS',
       },
     ],
   },
@@ -32,7 +32,7 @@ export const experiences: Experience[] = [
         description: `EZlife is a internal project to build a tool in order to manage human resource. The clients want to know how many headcount are not staffed into any project, or how many ones for each roles. We build a tool to visualize data on charts and integrate with other existing tools`,
         role: 'Backend developer',
         teamSize: 12,
-        technology: 'Nodejs, GraphQL, Sequelize, Nextjs',
+        technology: 'NodeJS, GraphQL, Sequelize, NextJS',
       },
       {
         name: 'CloudHMS',

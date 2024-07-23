@@ -81,8 +81,11 @@ export const MainContent = () => {
             in software engineering. I have been working in the software
             industry since 2016. In the era of Industry 4.0, I aspire to become
             an adaptable engineer capable of meeting diverse requirements across
-            various industry fields. My skill set includes proficiency in
-            C#/C++, .NET, Python, Node.js, and web and multimedia processing.
+            various industry fields. My top skills include C# (dotNet),
+            TypeScript, ReactJS, NodeJS, SQL... problem solving, critical
+            thinking, performance optimization, research, and the application of
+            new technologies. I have worked in various domains, including oil
+            and gas, healthcare, hospitality, and multimedia processing.
           </div>
         </Section>
         <Section title="Education" iconUrl={graduateCapIconUrl}>
@@ -259,22 +262,22 @@ export const MainContent = () => {
             >
               <div>Reading</div>
               <ProgressBar
-                percent={80}
+                percent={90}
                 inProp={inPropForProgressBars}
               ></ProgressBar>
               <div>Writing</div>
               <ProgressBar
-                percent={70}
+                percent={80}
                 inProp={inPropForProgressBars}
               ></ProgressBar>
               <div>Listening</div>
               <ProgressBar
-                percent={60}
+                percent={70}
                 inProp={inPropForProgressBars}
               ></ProgressBar>
               <div>Speaking</div>
               <ProgressBar
-                percent={50}
+                percent={70}
                 inProp={inPropForProgressBars}
               ></ProgressBar>
             </div>

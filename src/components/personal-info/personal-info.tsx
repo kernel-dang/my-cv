@@ -73,7 +73,7 @@ export const PersonalInfo = () => {
           }}
         </Transition>
         <span className="font-medium text-nowrap mt-2">
-          FULL-STACK .NET & REACT POSITION
+          Fullstack Software Engineer - ReactJS, .Net (C#), NodeJS, TypeScript
         </span>
       </div>
     </div>
