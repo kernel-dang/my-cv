@@ -82,11 +82,11 @@ const DownloadButton = () => {
               imageSectionHeight = imageHeight - previousImageHeight; // remain content
             } else if (index === 0) {
               imageSectionHeight = floor(
-                (pdfPageHeight - pageMarginBottom - 10) * ratio
+                (pdfPageHeight - pageMarginBottom - 12) * ratio
               );
             } else if (index === 1) {
               imageSectionHeight = floor(
-                (pdfPageHeight - pageMarginBottom - pageMarginTop - 15) * ratio
+                (pdfPageHeight - pageMarginBottom - pageMarginTop - 17) * ratio
               );
             } else {
               imageSectionHeight = floor(

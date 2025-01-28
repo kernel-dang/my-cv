@@ -78,11 +78,8 @@ export const MainContent = () => {
         <Section title="About me" iconUrl={informationIconUrl}>
           <div className="text-left">
             I graduated from the University of Information Technology with major
-            in software engineering. I have been working in the software
-            industry since 2016. In the era of Industry 4.0, I aspire to become
-            an adaptable engineer capable of meeting diverse requirements across
-            various industry fields. My top skills include C# (dotNet),
-            TypeScript, ReactJS, NodeJS, SQL... problem solving, critical
+            in software engineering. My top skills include C# (dotNet),
+            TypeScript, ReactJS, NodeJS, SQL, Azure Cloud Platform... problem solving, critical
             thinking, performance optimization, research, and the application of
             new technologies. I have worked in various domains, including oil
             and gas, healthcare, hospitality, and multimedia processing.
@@ -287,7 +284,7 @@ export const MainContent = () => {
           <div className="text-left">
             <div className="flex flex-row gap-2 items-center">
               <img
-                src="https://media.licdn.com/dms/image/D5603AQEtE0TYuGN7PA/profile-displayphoto-shrink_100_100/0/1713108856995?e=1726099200&amp;v=beta&amp;t=WpYcZ4N1t7nrvNXIjJdWWt2L1jz7dt_KFTNGnMGuacE"
+                src="https://media.licdn.com/dms/image/v2/D5603AQEtE0TYuGN7PA/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1713108856995?e=1743638400&v=beta&t=AA522_d1BQtajFrOLH-wyxNVSgG2tCttg97IZ2bc14Q"
                 loading="lazy"
                 alt="Nguyen Hoang profile picture"
                 className="rounded-full size-14"
